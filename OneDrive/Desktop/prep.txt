@@ -1,0 +1,763 @@
+1.gretest of three numbers
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int a=sc.nextInt();
+	int b=sc.nextInt();
+	int c=sc.nextInt();
+	int sum=0;
+	if(a>b  && a>c)
+	{
+	    System.out.println(a);
+	}
+	else if(b>c)
+	{
+	    System.out.println(b);
+	}
+	else{
+	    System.out.println(c);
+	}
+}
+}
+
+2.leap year or not
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int a=sc.nextInt();
+    if((a%400==0)||(a%4==0 && a%100!=0))
+    {
+        System.out.println(a+"is a leap year");
+    }
+    else{
+        System.out.println(a+"is not a leap year");
+    }
+}
+}
+
+3.prime number in range and find max prime
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int start=sc.nextInt();
+	int end=sc.nextInt();
+	int i,j,flag,k=0,temp;
+	int[] a=new int[25];
+	for(i=start;i<=end;i++)
+	{
+	    flag=0;
+	    for(j=1;j<=end;j++)
+	    {
+	        if(i%j==0)
+	        {
+	            flag=flag+1;
+	        }
+	    }
+	    if(flag==2)
+	    {
+	        a[k]=i;
+	        k++;
+	    }
+	}
+	int max=a[0];
+	for(i=1;i<k;i++){
+	    if(max<a[i])
+	    {
+	        max=a[i];
+	    }
+	}
+	System.out.println(max);
+	}
+}
+ 
+4.sum of digits in a number
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  Scanner sc=new Scanner(System.in);
+	  int n=sc.nextInt();
+	  int sum=0,rem;
+	  while(n!=0)
+	  {
+	      rem=n%10;
+	      sum=sum+rem;
+	      n=n/10;
+	  }
+	  System.out.println(sum);
+	   
+	}
+}
+5.reverse of a number
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  Scanner sc=new Scanner(System.in);
+	  int n=sc.nextInt();
+	  int sum=0,rem;
+	  while(n!=0)
+	  {
+	      rem=n%10;
+	      sum=sum*10+rem;
+	      n=n/10;
+	  }
+	  System.out.println(sum);
+	   
+	}
+}
+
+6.palindrome or not
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  Scanner sc=new Scanner(System.in);
+	  int n=sc.nextInt();
+	  int temp=n;
+	  int sum=0,rem;
+	  while(n!=0)
+	  {
+	      rem=n%10;
+	      sum=sum*10+rem;
+	      n=n/10;
+	  }
+	  if(sum==temp)
+	  {
+	     System.out.println("Is a palindrome");
+	  }
+	  else
+	  {
+	      System.out.println("Is not a palindrome");
+	  }
+	   
+	}
+}
+
+7.Amstrong number
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  Scanner sc=new Scanner(System.in);
+	  int n=sc.nextInt();
+	  int temp=n,rem,sum=0;
+	  int count=0,r;
+	  while(n!=0)
+	  {
+	      count++;
+	      n=n/10;
+	  }
+	  n=temp;
+	  while(n!=0)
+	  {
+	      rem=n%10;
+	      r=1;
+	      for(int i=0;i<count;i++)// we are using the Math.pow() function
+	      {
+	          r=r*rem;
+	      }
+	      sum=sum+r;
+	      n=n/10;
+	  }
+	  if(temp==sum)
+	  {
+	      System.out.println(temp+" is amstron number");
+	  }else{
+	      System.out.println(temp+"Is noot amstron number");
+	  }
+
+	   
+	}
+}
+
+7.Armstrong number in a range
+
+import java.util.*;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  Scanner sc=new Scanner(System.in);
+	  int strat=sc.nextInt();
+	  int end=sc.nextInt();
+	  int i;
+	  for(i=strat;i<=end;i++)
+	  {
+	      int sum=0,count=0,rem,n=i;
+	      while(n!=0)
+	      {
+	          count++;
+	          n=n/10;
+	      }
+	      n=i;
+	      while(n!=0)
+	      {
+	          rem=n%10;
+	          sum=sum+(int)Math.pow(rem,count);
+	          n=n/10;
+	      }
+	      if(sum==i)
+	      {
+	          System.out.println(i);
+	      }
+	  }
+	   
+	}
+}
+
+8.fibanocci series upto given nunmber
+
+import java.util.*;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  Scanner sc=new Scanner(System.in);
+	  int n=sc.nextInt();
+	  int a=0,b=1,c=0;
+	  while(c<=n)
+	    {
+	        c=a+b;
+	        if(c<=n)
+	        {
+	        System.out.println(c);
+	        a=b;
+	        b=c;
+	        }
+	    }
+	   
+	}
+}
+
+9.Factorial of a number
+
+import java.util.*;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  Scanner sc=new Scanner(System.in);
+	  int n=sc.nextInt();
+	  int fact=1;
+	  for(int i=1;i<=n;i++)
+	  {
+	      fact=fact*i;
+	  }
+	  System.out.println(fact);
+	   
+	}
+}
+
+10.power of a number
+
+import java.util.Scanner;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int a=sc.nextInt();
+	int n=sc.nextInt();
+	int pow=1;
+	for(int i=1;i<n;i++)
+	{
+	    pow=pow*a;
+	}
+	System.out.println(pow);
+	}
+}
+
+11.Factors of a number
+
+import java.util.Scanner;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int a=sc.nextInt();
+	for(int i=1;i<=a;i++)
+	{
+	    if(a%i==0)
+	    {
+	        System.out.println(i);
+	    }
+	}
+	}
+}
+
+12.Strong number(sum of indival digits factorial is equal to original number)
+
+import java.util.Scanner;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int a=sc.nextInt();
+	int sum=0,rem,b=a;
+	while(a!=0)
+	{
+	    rem=a%10;
+	    sum=sum+fact(rem);
+	    a=a/10;
+	}
+	System.out.println(sum);
+	if (sum==b)
+	{
+	    System.out.println(b+"is a strong number");
+	}
+	else
+	{
+	    System.out.println(b+" Is not a strong number");
+	}
+	}
+	public static int fact(int a)
+	{
+	   int f=1;
+	    for(int i=1;i<=a;i++)
+	    {
+	        f=f*i;
+	    }
+	    return f;
+	}
+}
+ 
+ or
+ 
+ import java.util.Scanner;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int a=sc.nextInt();
+	int sum=0,rem,b=a;
+	while(a!=0)
+	{
+	    rem=a%10;
+	    int f=1;
+	    for(int i=1;i<=rem;i++)
+	        f=f*i;
+	    sum=sum+f;
+	    a=a/10;
+	}
+	if (sum==b)
+	{
+	    System.out.println(b+"is a strong number");
+	}
+	else
+	{
+	    System.out.println(b+" Is not a strong number");
+	}
+	}
+}
+
+13.perfect number(sum of proper factors is equal to original number)
+
+
+import java.util.Scanner;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int a=sc.nextInt();
+	int i,sum=0;
+	for(i=1;i<a;i++)
+	{
+	    if(a%i==0)
+	    {
+	        sum=sum+i;
+	    }
+	}
+	if (sum==a)
+	{
+	    System.out.println(a+"is a strong number");
+	}
+	else
+	{
+	    System.out.println(a+" Is not a strong number");
+	}
+	}
+}
+
+14.autorphic number(square of a number contains original number)
+
+
+import java.util.Scanner;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int a=sc.nextInt();
+	int b=a,count=0,s=0;
+	while(a!=0)
+	{
+	    count++;
+	    a=a/10;
+	}
+	a=b*b;
+	if(count==1)
+	{
+	    s=a%10;
+	}
+	else if(count==2)
+	{
+	    s=a%100;
+	}
+	else if(count==3)
+	{
+	    s=a%1000;
+	}
+	if (s==b)
+	{
+	    System.out.println(b+"is a automorphic number");
+	}
+	else
+	{
+	    System.out.println(b+" Is not a automarphic number");
+	}
+	}
+}
+
+
+15.Harshad number(original number is divisible of sum of its digits)
+
+import java.util.Scanner;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int a=sc.nextInt();
+	int b=a,sum=0,rem;
+    while(a!=0)
+    {
+        rem=a%10;
+        sum=sum+rem;
+        a=a/10;
+    }
+    if(b%sum==0)
+    {
+        System.out.println(b+"is a harshad number");
+    }
+    else
+    {
+        System.out.println(b+"is a not harshad number");
+    }
+	}
+}
+
+
+16.Abundant number
+
+
+import java.util.Scanner;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int a=sc.nextInt();
+    int sum=0,b=a;
+    for(int i=1;i<a;i++)
+    {
+        if(a%i==0)
+        {
+            sum=sum+i;
+        }
+    }
+    if(sum>a)
+    {
+        System.out.println(a+"is abundant number");
+    }
+    else{
+        System.out.println(a+"Is npt a abundant number");
+    }
+	}
+}
+
+
+17.friendly pair
+
+import java.util.Scanner;
+import java.lang.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int a=sc.nextInt();
+    int b=sc.nextInt();
+    if(div(a)/a==div(b)/b)
+    {
+        System.out.println("It is a frendly pair");
+    }
+    else{
+        System.out.println("Is is npt a frirndly pair number");
+    }
+	}
+	public static int div(int a)
+	{
+	    int sum=0;
+	    for(int i=1;i<a;i++)
+	    {
+	        if(a%i==0)
+	        {
+	            sum=sum+i;
+	        }
+	    }
+	    return sum;
+	}
+}
+
+18.hcf or gcf 
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc =new Scanner(System.in);
+	int a=sc.nextInt();
+	int b=sc.nextInt();
+	while(a!=b)
+	{
+	    if(a>b)
+	    {
+	        a=a-b;
+	    }
+	    if(b>a)
+	    {
+	        b=b-a;
+	    }
+	}
+	System.out.println(a+"Is gcd");
+	}
+}
+
+19.LCM 
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc =new Scanner(System.in);
+	int a=sc.nextInt();
+	int b=sc.nextInt();
+	a=(a>b)?a:b;
+    for(int i=a;i<=a*b;i++)
+    {
+        if(i%a==0 && i%b==0)
+        {
+            System.out.println(i+"is LCM");
+            break;
+        }
+    }
+	}
+}
+
+21.find the quadrant
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int a=sc.nextInt();
+	int b=sc.nextInt();
+	if(a==0 && b==0)
+	    System.out.println("its is origin");
+	else if(a>0 && b>0)
+	    System.out.println("its is in 1st quardent");
+	else if(a<0 && b>0)
+	    System.out.println("its is in 2nd quardent");
+	else if(a<0 && b<0)
+	    System.out.println("It is in 3rd quardent");
+	 else if(a>0 && b<0)
+	    System.out.println("It is in 4 th quaredent");
+	    
+}
+}
+
+22.permutation of n seats occupied by r members
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int a=sc.nextInt();
+	int b=sc.nextInt();
+	if(a>=b)
+	{
+	    int c=fact(a)/fact(a-b);
+	    System.out.println(c+"  is the permutation");
+	}
+	else
+	    System.out.println("invalid input");
+	    
+	}
+	public static int fact(int n)
+	{
+	    int f=1;
+	    if(n==0 || n==1)
+	        return 1;
+	    else
+	        return n*fact(n-1);
+	}
+}
+
+23.Maximum number of handshakes
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int a=sc.nextInt();
+	int c=a*(a-1)/2;
+	System.out.println(c);
+	}
+}
+
+24. 2 fractions adding 
+	
+	import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int n1=sc.nextInt();
+	int d1=sc.nextInt();
+	int n2=sc.nextInt();
+	int d2=sc.nextInt();
+	int n3=0,d3=0;
+	if(d1==d2)
+	{
+	    n3=n1+n2;
+	    d3=d2;
+	}
+	else
+	{
+	    n3=n1*d2+n2*d1;
+	    int a=(d2>d1)?d2:d1;
+	    for(int i=a;i<=d2*d1;i++)
+	    {
+	        if(i%d2==0 && i%d1==0)
+	        {
+	            d3=i;
+	        }
+	    }
+	}
+	int c=(n3>d3)?d3:n3;
+	for(int i=2;i<=c;i++)
+	{
+	    if(n3%i==0 && d3%i==0)
+	    {
+	        n3=n3/i;
+	        d3=d3/i;
+	        i=2;
+	    }
+	}
+	System.out.println(n3+"/"+d3);
+	}
+}
+
+25.replace all '0's with 1 in a given number
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		int b[]=new int[5];
+		int k=0;
+		while(a!=0)
+		{
+		    b[k]=a%10;
+		    k++;
+		    a=a/10;
+		}
+		for(int i=k;i>0;i--)
+		{
+		    if(b[i]==0)
+		    {
+		        System.out.print("1");
+		        continue;
+		    }
+		    System.out.print(b[i]);
+		}
+	}
+}
+
+
+26.number into sum of prime numbers
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		int x=0;
+		for(int i=0;i<=a/2;i++)
+		{
+		    if(prime(i)==1)
+		        {
+		            if(prime(a-i)==1)
+		            {
+		                System.out.println("number sum in prime numbers "+a+" is "+i+" + "+(a-i));
+		                x=x+1;
+		            }
+		        }
+		}
+		if(x==0)
+		{
+		    System.out.println("sum is not posiible");
+		}
+		
+	}
+	public static int prime(int n)
+	{
+	    int c=1;
+	   for(int i=2;i<n/2;i++)
+	   {
+	       if(n%i==0)
+	       {
+	           c=0;
+	       }
+	   }
+	   return c;
+	}
+}
+
+
+28.
+
+
+
+
+
+
+
+
+

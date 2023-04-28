@@ -1,2 +1,4 @@
 this is for pull and fetch practice
 this is another
+the fetch is complete and 
+now try in pull command
